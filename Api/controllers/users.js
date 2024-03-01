@@ -1,18 +1,12 @@
-const mongoose = require('mongoose');
-const userCreator = require('../Models/userModel');
-const urlDB = "mongodb://localhost:27017"
 
-async function getUsers (){
-    const connection = await mongoose.createConnection(urlDB)
+const User = require('../Models/userModel');
+
+async function getUsers() {
     try {
-        const userModel = userCreator(connection);
-        const data = await userModel.find();
-        connection.close();
-        return json(data);
-        
-    } catch (error) {
-        connection.close();
-        throw new Error(error)
+        const users = await User.find();
+        return users;
+    } catch (err) {
+        throw err;
     }
 }
 

@@ -1,6 +1,7 @@
 // Description: Archivo principal de la aplicación
 //-----------------Imports-----------------//
 const express = require('express');
+const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 // const htpp = require('http');
@@ -8,6 +9,14 @@ const bodyParser = require('body-parser');
 //-----------------App-----------------//
 const app = express();
 
+mongoose.connect('mongodb://127.0.0.1:27017/my-bank')
+.then(() => {
+    console.log('Conexión exitosa a MongoDB');
+    app.listen(9000, () => {
+        console.log('Server running on port 9000');
+    });
+})
+.catch(err => console.error('Error de conexión a MongoDB', err));
 //-----------------Middlewares-----------------//
 app.use(bodyParser.json());
 app.use(cors())
@@ -28,9 +37,7 @@ app.use("/user", userRoute);
 app.get("/", (req, res) => {
     res.send("Welcome to the API of CumData the best shop in the world");
 });
-app.listen(9000, () => {
-    console.log('Server running on port 9000');
-});
+
 // server.listen(9000, () => {
 //     console.log('Server running on port 9000');
 // });

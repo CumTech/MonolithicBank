@@ -1,36 +1,66 @@
 const express = require('express');
 const { Router } = express;
-const mongoose = require('mongoose');
-const CuentaModelCreator = require('../Models/userModel');
 const routes = Router();
-const urlDB = "mongodb://localhost:27017"
+const User = require('../Models/userModel')
+const userController = require('../controllers/users'); 
 
-const userContoller = require('../controllers/users')
-
-routes.get('/user/', async (req, res) => {
+routes.get('/', async (req, res) => {
     try {
-        const result = await userContoller.getUsers(); // Si 'con' no está definido, asigna null
+        const result = await User.find();
         res.json(result);
     } catch (error) {
-        res.status(400).json({ success: false, message: error });
+        res.status(400).json({ success: false, message: error.message });
     }
-
 });
 
-routes.get('/user/:id', async (req, res) => {
-
+routes.get('/:id', async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        if (!user) {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+        res.json(user);
+    } catch (error) {
+        console.log('error')
+        res.status(500).json({ message: error.message });
+    }
 });
 
-routes.post('/user/', async (req, res) => {
-
+routes.post('/', async (req, res) => {
+    try {
+        const newUser = await User.create(req.body);
+        res.status(201).json(newUser);
+    } catch (error) {
+        console.log('error')
+        res.status(400).json({ message: error.message });
+    }
 });
 
-routes.delete('/user/:id', async (req, res) => {
 
+routes.put('/:id', async (req, res) => {
+    try {
+        const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        if (!updatedUser) {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+        res.json(updatedUser);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
 });
 
-routes.put('/user/:id', async (req, res) => {
 
+routes.delete('/:id', async (req, res) => {
+    try {
+        const deletedUser = await User.findByIdAndDelete(req.params.id);
+        if (!deletedUser) {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+        res.json({ message: 'Usuario eliminado correctamente' });
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
 });
+
 
 module.exports = routes;
