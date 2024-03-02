@@ -27,4 +27,6 @@ const transferenciaSchema = new Schema({
     }
 });
 
-module.exports = (connection) => connection.model('Transferencia', transferenciaSchema);
+const Transferencia = mongoose.model('Transferencia', transferenciaSchema);
+module.exports = Transferencia
+

@@ -20,4 +20,5 @@ const cuentaSchema = new Schema({
     }]
 });
 
-module.exports = (connection) => connection.model('Cuenta', cuentaSchema);
+const Cuenta = mongoose.model('Cuenta', cuentaSchema);
+module.exports = Cuenta

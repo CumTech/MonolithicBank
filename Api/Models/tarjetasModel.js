@@ -27,5 +27,7 @@ const tarjetaSchema = new Schema({
         ref: 'Cuenta'
     }
 });
+const Tarjeta = mongoose.model('Tarjeta', tarjetaSchema);
+module.exports = Tarjeta
 
-module.exports = (connection) => connection.model('Tarjeta', tarjetaSchema);
+
