@@ -1,6 +1,6 @@
 import localFont from 'next/font/local'
 import "./globals.css";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils";
 
 const fontKodeMono = localFont({
   src: "../../public/fonts/KodeMono-VariableFont_wght.ttf",
