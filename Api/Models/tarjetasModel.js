@@ -18,10 +18,6 @@ const tarjetaSchema = new Schema({
         type: String,
         required: true,
     },
-    propietario: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    },
     cuenta_asociada: {
         type: Schema.Types.ObjectId,
         ref: 'Cuenta'

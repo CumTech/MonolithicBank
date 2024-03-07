@@ -14,6 +14,10 @@ const cuentaSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'User'
     }],
+    tarjetas: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Tarjeta'
+    }],
     transacciones: [{
         type: Schema.Types.ObjectId,
         ref: 'Transferencia'
