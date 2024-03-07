@@ -3,7 +3,7 @@ const {Router} = express;
 const Transferencia = require('../Models/transferenciasModel')
 const Tarjeta = require('../Models/tarjetasModel')
 const Cuenta = require('../Models/cuentasModel')
-const mongoose = require('mongoose');
+
 const CuentaModelCreator = require('../Models/transferenciasModel');
 const routes = Router();
 const urlDB = "mongodb://localhost:27017"
@@ -76,13 +76,18 @@ routes.post('/', async (req, res) => {
         const cuentaDestino = await Cuenta.findOne({ tarjetas: tarjeta_destino });
 
         if (cuentaOrigen && cuentaDestino) {
-            cuentaOrigen.transacciones.push(transferencia._id);
-            cuentaDestino.transacciones.push(transferencia._id);
-            await cuentaOrigen.save();
-            await cuentaDestino.save();
+            if(cuentaOrigen._id.equals(cuentaDestino._id)){
+                cuentaOrigen.transacciones.push(transferencia._id);
+                await cuentaOrigen.save();
+            }else{
+                cuentaOrigen.transacciones.push(transferencia._id);
+                cuentaDestino.transacciones.push(transferencia._id);
+                await cuentaOrigen.save();
+                await cuentaDestino.save();
+            }
         }
 
-        res.status(200).json({ message: 'Transferencia realizada correctamente' });
+        res.status(200).json({ message: 'Transferencia realizada correctamente', transferencia: transferencia._id});
     } catch (error) {
         console.error('Error:', error);
         res.status(500).json({ message: 'Error interno del servidor' });
