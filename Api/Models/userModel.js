@@ -10,7 +10,7 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
-    dni: {
+    curp: {
         type: String,
         required: true,
     },

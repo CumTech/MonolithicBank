@@ -32,6 +32,7 @@ routes.post('/', async (req, res) => {
     try {
         const newTrans = await Transferencia.create(req.body);
         res.status(201).json(newTrans);
+        
     } catch (error) {
         console.log('error')
         res.status(400).json({ message: error.message });
