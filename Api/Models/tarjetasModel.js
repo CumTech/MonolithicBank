@@ -10,7 +10,11 @@ const tarjetaSchema = new Schema({
         type: String,
         required: true,
     },
-    fecha_vencimiento: {
+    mes_vencimiento: {
+        type: String,
+        required: true,
+    },
+    año_vencimiento: {
         type: String,
         required: true,
     },
@@ -21,9 +25,13 @@ const tarjetaSchema = new Schema({
     cuenta_asociada: {
         type: Schema.Types.ObjectId,
         ref: 'Cuenta'
+    },
+    saldo: {
+        type: Number,
+        required: true,
+        default: 0
     }
 });
+
 const Tarjeta = mongoose.model('Tarjeta', tarjetaSchema);
-module.exports = Tarjeta
-
-
+module.exports = Tarjeta;

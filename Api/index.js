@@ -27,10 +27,10 @@ const tarjetasRoute = require('./routes/tarjetasRoute');
 const transferenciaRoute = require("./routes/transferenciaRoute");
 const userRoute = require("./routes/userRoute");
 
-app.use("/cuentas", cuentasRoute);
-app.use("/tarjetas", tarjetasRoute);
-app.use("/transferencias", transferenciaRoute);
-app.use("/user", userRoute);
+app.use("/v1/cuentas", cuentasRoute);
+app.use("/v1/tarjetas", tarjetasRoute);
+app.use("/v1/transferencias", transferenciaRoute);
+app.use("/v1/user", userRoute);
 
 
 

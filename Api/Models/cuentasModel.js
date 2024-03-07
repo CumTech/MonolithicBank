@@ -6,10 +6,10 @@ const cuentaSchema = new Schema({
         type: String,
         required: true,
     },
-    saldo: {
+/*    saldo: {
         type: Number,
         required: true,
-    },
+    },*/
     titulares: [{
         type: Schema.Types.ObjectId,
         ref: 'User'
