@@ -1,10 +1,7 @@
 const express = require('express');
 const {Router} = express;
 const Tarjeta = require('../Models/tarjetasModel')
-const mongoose = require('mongoose');
-const CuentaModelCreator = require('../Models/tarjetasModel');
 const routes = Router();
-const urlDB = "mongodb://localhost:27017"
 const Cuenta = require('../Models/cuentasModel')
 
 routes.get('/', async (req, res) => {

@@ -4,7 +4,7 @@ const routes = Router();
 const User = require('../Models/userModel')
 const Tarjeta = require('../Models/tarjetasModel')
 const Cuenta = require('../Models/cuentasModel')
-const userController = require('../controllers/users'); 
+
 
 routes.get('/', async (req, res) => {
     try {

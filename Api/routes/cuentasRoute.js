@@ -3,8 +3,6 @@ const {Router} = express;
 
 
 const Cuenta = require('../Models/cuentasModel')
-const mongoose = require('mongoose');
-const CuentaModelCreator = require('../Models/cuentasModel');
 const routes = Router();
 
 const User = require('../Models/userModel');

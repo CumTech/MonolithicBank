@@ -4,9 +4,8 @@ const Transferencia = require('../Models/transferenciasModel')
 const Tarjeta = require('../Models/tarjetasModel')
 const Cuenta = require('../Models/cuentasModel')
 
-const CuentaModelCreator = require('../Models/transferenciasModel');
 const routes = Router();
-const urlDB = "mongodb://localhost:27017"
+
 
 routes.get('/', async (req, res) => {
     try {
