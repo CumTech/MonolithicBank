@@ -1,6 +1,6 @@
 
-const Cuenta = require('../Models/userModel');
-
+const User = require('../Models/userModel');
+const Cuenta = require('../Models/cuentasModel')
 async function getCuentas() {
     
 }

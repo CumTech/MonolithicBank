@@ -1,13 +1,12 @@
 const express = require('express');
 const {Router} = express;
-const {createCuenta,deleteCuentas} = require("../controllers/cuentas");
 
 
-const Cuenta = require('../Models/cuentasModel')
+
 const routes = Router();
 
-const User = require('../Models/userModel');
-const { createCuenta,deleteCuentas ,updateCuenta} = require('../controllers/tarjeta');
+
+const { createCuenta,deleteCuentas ,updateCuenta} = require('../controllers/cuentas');
 
 routes.get('/', async (req, res) => {
     try {
@@ -32,6 +31,7 @@ routes.get('/:id', async (req, res) => {
 });
 
 routes.post('/', async (req, res) => {
+    console.log(req.body)
     createCuenta(req,res)
 });
 
