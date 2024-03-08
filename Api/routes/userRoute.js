@@ -3,7 +3,8 @@ const { Router } = express;
 const routes = Router();
 const User = require('../Models/userModel')
 const Tarjeta = require('../Models/tarjetasModel')
-const Cuenta = require('../Models/cuentasModel')
+const Cuenta = require('../Models/cuentasModel');
+const { createUsers,deleteUsers,deleteUser_Account,updateUsers } = require('../controllers/users');
 
 
 routes.get('/', async (req, res) => {
@@ -51,77 +52,21 @@ routes.get('/tarjetas/:id', async (req, res) => {
 });
 
 routes.post('/', async (req, res) => {
-    try {
-        const newUser = await User.create(req.body);
-        res.status(201).json(newUser);
-    } catch (error) {
-        console.log('error')
-        res.status(400).json({ message: error.message });
-    }
+    createUsers(req,res)
 });
 
-
 routes.put('/:id', async (req, res) => {
-    try {
-        const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
-        if (!updatedUser) {
-            return res.status(404).json({ message: 'Usuario no encontrado' });
-        }
-        res.json(updatedUser);
-    } catch (error) {
-        res.status(400).json({ message: error.message });
-    }
+  updateUsers(req.params.id,req,res)
 });
 
 
 routes.delete('/:id', async (req, res) => {
-    try {
-        const deletedUser = await User.findByIdAndDelete(req.params.id);
-        if (!deletedUser) {
-            return res.status(404).json({ message: 'Usuario no encontrado' });
-        }
-        res.json({ message: 'Usuario eliminado correctamente' });
-    } catch (error) {
-        res.status(400).json({ message: error.message });
-    }
+   req = req.params.id
+   deleteUsers(req,res)
 });
 
 routes.delete('/:id_user/cuenta/:id_cuenta', async (req, res) => {
-    try {
-        const user = await User.findById(req.params.id_user);
-        if (!user) {
-            return res.status(404).json({ message: 'Usuario no encontrado' });
-        }
-
-        const cuenta = await Cuenta.findById(req.params.id_cuenta);
-        if (!cuenta) {
-            return res.status(404).json({ message: 'Cuenta no encontrada' });
-        }
-
-        // Verificar si la cuenta está asociada al usuario
-        const cuentaIndex = user.cuentas.findIndex(cuentaId => cuentaId.toString() === req.params.id_cuenta);
-        if (cuentaIndex === -1) {
-            return res.status(404).json({ message: 'La cuenta no está asociada a este usuario' });
-        }
-
-        // Quitar la cuenta de la lista de cuentas del usuario
-        user.cuentas.pull(req.params.id_cuenta);
-        await user.save();
-
-        // Quitar al usuario de la lista de titulares de la cuenta
-        cuenta.titulares.pull(req.params.id_user);
-        await cuenta.save();
-
-        // Verificar si todavía hay titulares en la cuenta
-        if (cuenta.titulares.length === 0) {
-            cuenta.tipo_cuenta += '_inactiva';
-            await cuenta.save();
-        }
-
-        res.json({ message: 'Cuenta eliminada correctamente del usuario' });
-    } catch (error) {
-        res.status(400).json({ message: error.message });
-    }
+    deleteUser_Account(req.params.id_user, req.params.id_cuenta,res)
 });
 
 
