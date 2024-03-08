@@ -2,9 +2,7 @@ const express = require('express');
 const { Router } = express;
 const routes = Router();
 const User = require('../Models/userModel')
-const Tarjeta = require('../Models/tarjetasModel')
-const Cuenta = require('../Models/cuentasModel');
-const { createUsers,deleteUsers,deleteUser_Account,updateUsers } = require('../controllers/users');
+const { createUsers,deleteUsers,deleteUser_Account,updateUsers,getTarjetasByIdUsers } = require('../controllers/users');
 
 
 routes.get('/', async (req, res) => {
@@ -30,25 +28,7 @@ routes.get('/:id', async (req, res) => {
 });
 
 routes.get('/tarjetas/:id', async (req, res) => {
-    try {
-        // Buscar el usuario por su ID
-        const user = await User.findById(req.params.id);
-        
-        // Verificar si el usuario existe
-        if (!user) {
-            return res.status(404).json({ message: 'Usuario no encontrado' });
-        }
-
-        // Buscar las tarjetas asociadas al usuario
-        const tarjetas = await Tarjeta.find({ cuenta_asociada: { $in: user.cuentas } });
-        
-        // Devolver las tarjetas encontradas
-        res.json(tarjetas);
-    } catch (error) {
-        // Manejar errores
-        console.error('Error:', error);
-        res.status(500).json({ message: 'Error interno del servidor' });
-    }
+   getTarjetasByIdUsers(req.params.id, res)
 });
 
 routes.post('/', async (req, res) => {

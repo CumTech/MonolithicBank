@@ -1,6 +1,6 @@
 
 const User = require('../Models/userModel');
-
+const Tarjeta = require("../Models/tarjetasModel")
 async function getUsers() {
     try {
         const users = await User.find();
@@ -77,10 +77,32 @@ async function deleteUser_Account(userId,accountId,res){
         res.status(400).json({ message: error.message });
     }
 }
+async function getTarjetasByIdUsers(id,res){
+    try {
+        // Buscar el usuario por su ID
+        const user = await User.findById(id);
+        
+        // Verificar si el usuario existe
+        if (!user) {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+
+        // Buscar las tarjetas asociadas al usuario
+        const tarjetas = await Tarjeta.find({ cuenta_asociada: { $in: user.cuentas } });
+        
+        // Devolver las tarjetas encontradas
+        res.json(tarjetas);
+    } catch (error) {
+        // Manejar errores
+        console.error('Error:', error);
+        res.status(500).json({ message: 'Error interno del servidor' });
+    }
+}
 module.exports = {
     getUsers,
     createUsers,
     deleteUsers,
     deleteUser_Account,
-    updateUsers
+    updateUsers,
+    getTarjetasByIdUsers
 }

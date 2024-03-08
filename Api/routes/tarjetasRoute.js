@@ -2,7 +2,7 @@ const express = require('express');
 const {Router} = express;
 const Tarjeta = require('../Models/tarjetasModel')
 const routes = Router();
-const Cuenta = require('../Models/cuentasModel')
+
 const {createTarejeta,deleteTarjeta,updateTarjeta} = require("../controllers/tarjeta")
 
 routes.get('/', async (req, res) => {

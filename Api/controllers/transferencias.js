@@ -1,5 +1,7 @@
 
 const Transferencia = require('../Models/transferenciasModel');
+const Tarjeta = require("../Models/tarjetasModel")
+const Cuenta = require("../Models/cuentasModel")
 
 async function getTransfgerencias() {
     try {

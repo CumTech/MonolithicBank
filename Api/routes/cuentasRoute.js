@@ -1,6 +1,6 @@
 const express = require('express');
 const {Router} = express;
-
+const Cuenta = require('../Models/cuentasModel')
 
 
 const routes = Router();
@@ -31,7 +31,6 @@ routes.get('/:id', async (req, res) => {
 });
 
 routes.post('/', async (req, res) => {
-    console.log(req.body)
     createCuenta(req,res)
 });
 

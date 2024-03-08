@@ -1,9 +1,7 @@
 
 const User = require('../Models/userModel');
 const Cuenta = require('../Models/cuentasModel')
-async function getCuentas() {
-    
-}
+
 async function createCuenta(req,res){
     try {
         // Verificar si los IDs de los titulares están presentes en el cuerpo de la solicitud
@@ -65,7 +63,6 @@ async function updateCuenta(id,req,res){
 }
 
 module.exports = {
-    getCuentas,
     createCuenta,
     deleteCuentas,
     updateCuenta

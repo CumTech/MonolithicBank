@@ -1,5 +1,6 @@
 
-const Tarjeta = require('../Models/userModel');
+const Tarjeta = require('../Models/tarjetasModel');
+const Cuenta = require('../Models/cuentasModel')
 
 async function getTarjetas() {
     try {
@@ -38,7 +39,7 @@ async function createTarejeta(id_cuenta,req,res){
         res.status(201).json({ message: 'Nueva tarjeta agregada a la cuenta', tarjeta: nuevaTarjeta });
     } catch (error) {
         console.error('Error:', error);
-        res.status(500).json({ message: 'Error interno del servidor' });
+        res.status(500).json({ message: 'Error interno del servidor...' });
     }
 }
 async function deleteTarjeta(id_tarjeta,req,res){
