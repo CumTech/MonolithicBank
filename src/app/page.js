@@ -28,7 +28,7 @@ export default function Home() {
                 </h1>
                 <div className="relative flex justify-center">
                     <div
-                        className="w-[450px] h-[290px] z-10 left-40 -top-6 relative rotate-[-76.81deg] bg-background-50 bg-opacity-10 rounded-[40px] shadow-lg shadow-background-950 border-l-4 border-b-4 border-background-50 border-opacity-30 backdrop-blur-[5px]">
+                        className="w-[450px] h-[290px] z-10 left-40 -top-[5vh] relative rotate-[-76.81deg] bg-background-50 bg-opacity-10 rounded-[40px] shadow-lg shadow-background-950 border-l-4 border-b-4 border-background-50 border-opacity-30 backdrop-blur-[5px]">
                         <span
                             className="w-[328.03px] h-[68.89px] left-[59.27px] top-[201.67px] absolute text-slate-100 text-2xl font-medium">Luis
                             Alferez
@@ -39,7 +39,7 @@ export default function Home() {
                         </span>
                     </div>
                     <div
-                        className="w-[450px] h-[290px] top-[20vh] -left-40 relative rotate-[-76.81deg] bg-background-50 bg-opacity-10 rounded-[40px] shadow-lg shadow-background-950 border-l-4 border-b-4 border-background-50 border-opacity-30">
+                        className="w-[450px] h-[290px] top-[15vh] -left-40 relative rotate-[-76.81deg] bg-background-50 bg-opacity-10 rounded-[40px] shadow-lg shadow-background-950 border-l-4 border-b-4 border-background-50 border-opacity-30">
                         <span
                             className="w-[328.03px] h-[68.89px] left-[59.27px] top-[201.67px] absolute text-slate-100 text-2xl font-medium">Yamile
                             Robledo
@@ -50,7 +50,7 @@ export default function Home() {
                         </span>
                     </div>
                     <div
-                        className="w-[450px] h-[290px] top-[10vh] absolute rotate-[-76.81deg] bg-background-50 bg-opacity-10 rounded-[40px] shadow-lg shadow-background-950 border-l-4 border-b-4 border-background-50 border-opacity-30 backdrop-blur-[5px]">
+                        className="w-[450px] h-[290px] top-[5vh] absolute rotate-[-76.81deg] bg-background-50 bg-opacity-10 rounded-[40px] shadow-lg shadow-background-950 border-l-4 border-b-4 border-background-50 border-opacity-30 backdrop-blur-[5px]">
                         <span
                             className="w-[328.03px] h-[68.89px] left-[59.27px] top-[201.67px] relative text-slate-100 text-2xl font-medium">David
                             Martínez
@@ -62,7 +62,7 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className="flex flex-row mt-[500px]">
+            <section className="flex flex-row mt-[500px] px-10">
                 <div className="basis-1/3 items-center justify-center flex">
                     <h2 className="text-5xl font-normal leading-8">
                         The platform aimed to provide users with a seamless and educational experience, integrating
