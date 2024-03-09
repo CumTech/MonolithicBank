@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en" class="dark">
       <body
         className={cn(
-          "min-h-screen bg-background-default font-kode",
+          "min-h-screen bg-background-default font-kode text-text-50",
           `${fontKodeMono.variable}`
         )}
       >{children}</body>
