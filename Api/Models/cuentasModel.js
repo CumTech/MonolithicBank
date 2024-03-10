@@ -6,13 +6,17 @@ const cuentaSchema = new Schema({
         type: String,
         required: true,
     },
-    saldo: {
+/*    saldo: {
         type: Number,
         required: true,
-    },
+    },*/
     titulares: [{
         type: Schema.Types.ObjectId,
         ref: 'User'
+    }],
+    tarjetas: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Tarjeta'
     }],
     transacciones: [{
         type: Schema.Types.ObjectId,
@@ -20,4 +24,5 @@ const cuentaSchema = new Schema({
     }]
 });
 
-module.exports = (connection) => connection.model('Cuenta', cuentaSchema);
+const Cuenta = mongoose.model('Cuenta', cuentaSchema);
+module.exports = Cuenta

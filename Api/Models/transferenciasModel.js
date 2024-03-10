@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const transferenciaSchema = new Schema({
-    cuenta_origen: {
+    tarjeta_origen: {
         type: Schema.Types.ObjectId,
-        ref: 'Cuenta',
+        ref: 'Tarjeta',
         required: true,
     },
-    cuenta_destino: {
+    tarjeta_destino: {
         type: Schema.Types.ObjectId,
-        ref: 'Cuenta',
+        ref: 'Tarjeta',
         required: true,
     },
     monto: {
@@ -22,9 +22,10 @@ const transferenciaSchema = new Schema({
     },
     estado: {
         type: String,
-        enum: ['pendiente', 'completado', 'fallido'],
-        default: 'pendiente',
+        enum: ['completado', 'fallido'],
     }
 });
 
-module.exports = (connection) => connection.model('Transferencia', transferenciaSchema);
+const Transferencia = mongoose.model('Transferencia', transferenciaSchema);
+module.exports = Transferencia
+
