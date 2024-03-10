@@ -10,7 +10,7 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
-    dni: {
+    curp: {
         type: String,
         required: true,
     },
@@ -26,8 +26,10 @@ const userSchema = new Schema({
     },
     cuentas: [{
         type: Schema.Types.ObjectId,
-        ref: 'Cuenta'
+        ref: 'Cuenta',
+        required: false,
     }]
 });
+const User = mongoose.model('User', userSchema);
 
-module.exports = (connection) => connection.model('User', userSchema);
+module.exports = User;
