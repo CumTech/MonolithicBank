@@ -1,7 +1,6 @@
 import localFont from 'next/font/local'
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import NavBarHome from "@/components/NavBarHome";
 
 const fontKodeMono = localFont({
   src: "../../public/fonts/KodeMono-VariableFont_wght.ttf",
@@ -23,7 +22,6 @@ export default function RootLayout({ children }) {
           `${fontKodeMono.variable}`
         )}
       >
-        <NavBarHome />
         {children}
       </body>
     </html>

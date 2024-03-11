@@ -21,7 +21,7 @@ function ClosedSession() {
           <AlertDialogHeader className="flex flex-col space-y-6">
             <AlertDialogTitle className="self-center flex text-text-default text-end text-xl leading-7">
               Session closed due to inactivity!
-              <Image src="/icons/Icon.svg" alt="Image about closed session is like an x" className="absolute top-4 right-4" width={16} height={16}/>
+              <AlertDialogCancel className="w-5 h-5 px-0 py-0 rounded-full border-transparent absolute top-4 right-4"><Image src="/icons/Icon.svg" alt="Image about closed session is like an x" className="absolute" width={16} height={16}/></AlertDialogCancel>
             </AlertDialogTitle>
             <AlertDialogDescription className="text-text-default text-justify text-base font-normal" >
             For your security, you have been automatically logged out due to inactivity. To access again, please log in.
