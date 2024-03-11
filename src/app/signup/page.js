@@ -1,14 +1,20 @@
 'use client';
 import SignUpForm from "@/components/forms/SignUpForm";
 import Image from "next/image";
+import { Button } from '@/components/ui/button';
+import Link from "next/link";
 
 
 export default function SignUp() {
     return (
         <main className="flex flex-col items-center justify-center h-svh p-5">
-            <h2 className="text-[32px] leading-[48px] mb-auto">
-                Blosthex
-            </h2>
+            <Button asChild variant="link" className="mb-auto">
+                <Link href="/">
+                    <p className="text-[32px] leading-[48px]">
+                        BLosthex
+                    </p>
+                </Link>
+            </Button>
             <div className="flex items-center px-40 gap-32 mb-auto">
                 <SignUpForm />
                 <div className="flex flex-col w-2/5 items-center">
