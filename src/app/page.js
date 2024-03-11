@@ -72,19 +72,19 @@ export default function Home() {
                     </h2>
                 </div>
                 <div className="basis-1/3 relative">
-                    <Image src="/images/card.svg" alt="Cards" width={600} height={600}/>
+                    <Image src="/images/card.svg" alt="Cards" width={600} height={600} />
                     <div className="absolute top-[45vh] left-[35vh]">
                         <Button variant="card" size="lg" asChild>
                             <Link href="/login" className="flex gap-3">
                                 Start Now
-                                <Image src="/icons/open.svg" alt="Arrow Right" width={18} height={18}/>
+                                <Image src="/icons/open.svg" alt="Arrow Right" width={18} height={18} />
                             </Link>
                         </Button>
                     </div>
                 </div>
                 <div className="basis-1/3 grid gap-16">
                     <div>
-                        <Image src="/icons/credit-card.svg" alt="Credit Card" width={48} height={48}/>
+                        <Image src="/icons/credit-card.svg" alt="Credit Card" width={48} height={48} />
                         <h3 className="text-xl font-normal leading-7">
                             Advanced Credit Card Management
                         </h3>
@@ -93,7 +93,7 @@ export default function Home() {
                         </p>
                     </div>
                     <div>
-                        <Image src="/icons/credit-card.svg" alt="Credit Card" width={48} height={48}/>
+                        <Image src="/icons/credit-card.svg" alt="Credit Card" width={48} height={48} />
                         <h3 className="text-xl font-normal leading-7">
                             Integrated Educational Experience
                         </h3>
@@ -102,7 +102,7 @@ export default function Home() {
                         </p>
                     </div>
                     <div>
-                        <Image src="/icons/credit-card.svg" alt="Credit Card" width={48} height={48}/>
+                        <Image src="/icons/credit-card.svg" alt="Credit Card" width={48} height={48} />
                         <h3 className="text-xl font-normal leading-7">
                             Advanced Features for Simplified Management
                         </h3>
@@ -121,40 +121,40 @@ export default function Home() {
                 </h3>
                 <div className="grid grid-cols-6 gap-10 mx-72 my-12">
                     <Link title={'Adobe'} href={'https://adobe.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={adobe} alt="Adobe Logo" className="h-auto w-2/3 hover:scale-125"/>
+                        <Image src={adobe} alt="Adobe Logo" className="h-auto w-2/3 hover:scale-125" />
                     </Link>
                     <Link title={'Arc Browser'} href={'https://arc.net/'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={arc} alt="Arc Browser Logo" className="h-auto w-2/3 hover:scale-125"/>
+                        <Image src={arc} alt="Arc Browser Logo" className="h-auto w-2/3 hover:scale-125" />
                     </Link>
                     <Link title={'ConverKit'} href={'https://convertkit.com/'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={conver} alt="ConverKit Logo" className="h-auto w-4/5 hover:scale-125"/>
+                        <Image src={conver} alt="ConverKit Logo" className="h-auto w-4/5 hover:scale-125" />
                     </Link>
                     <Link title={'Descript'} href={'https://descript.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={descript} alt="Descript Logo" className="h-auto w-2/3 hover:scale-125"/>
+                        <Image src={descript} alt="Descript Logo" className="h-auto w-2/3 hover:scale-125" />
                     </Link>
                     <Link title={'Hex'} href={'https://revolut.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={revolute} alt="Revolute  Logo" className="h-2/3 w-2/3 hover:scale-125"/>
+                        <Image src={revolute} alt="Revolute  Logo" className="h-2/3 w-2/3 hover:scale-125" />
                     </Link>
                     <Link title={'Mercury'} href={'https://mercury.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={mercury} alt="Mercury Logo" className="h-auto w-4/5 hover:scale-125"/>
+                        <Image src={mercury} alt="Mercury Logo" className="h-auto w-4/5 hover:scale-125" />
                     </Link>
                     <Link title={'Ramp'} href={'https://ramp.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={ramp} alt="Ramp  Logo" className="h-auto w-2/3 hover:scale-125"/>
+                        <Image src={ramp} alt="Ramp  Logo" className="h-auto w-2/3 hover:scale-125" />
                     </Link>
                     <Link title={'Raycast'} href={'https://raycast.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={raycast} alt="Raycast Logo" className="h-auto w-2/3 hover:scale-125"/>
+                        <Image src={raycast} alt="Raycast Logo" className="h-auto w-2/3 hover:scale-125" />
                     </Link>
                     <Link title={'Remote'} href={'https://remote.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={remote} alt="Remote Logo" className="h-auto w-2/3 hover:scale-125"/>
+                        <Image src={remote} alt="Remote Logo" className="h-auto w-2/3 hover:scale-125" />
                     </Link>
                     <Link title={'Retool'} href={'https://retool.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={retool} alt="Retool Logo" className="h-auto w-2/3 hover:scale-125"/>
+                        <Image src={retool} alt="Retool Logo" className="h-auto w-2/3 hover:scale-125" />
                     </Link>
                     <Link title={'Runway'} href={'https://runway.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={runway} alt="Runway Logo" className="h-auto w-2/3 hover:scale-125"/>
+                        <Image src={runway} alt="Runway Logo" className="h-auto w-2/3 hover:scale-125" />
                     </Link>
                     <Link title={'Vercel'} href={'https://vercel.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={vercel} alt="Vercel Logo" className="h-auto w-2/3 hover:scale-125"/>
+                        <Image src={vercel} alt="Vercel Logo" className="h-auto w-2/3 hover:scale-125" />
                     </Link>
                 </div>
             </section>
