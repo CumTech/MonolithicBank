@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button"
 import Link from "next/link";
-import adobe from "../../public/icons/adobe.svg";
+import webflow from "../../public/icons/webflow.svg";
 import arc from "../../public/icons/arc.svg";
 import conver from "../../public/icons/conver.svg";
 import descript from "../../public/icons/descript.svg";
@@ -120,8 +120,8 @@ export default function Home() {
                     From next-generation startups to fully established companies.
                 </h3>
                 <div className="grid grid-cols-6 gap-10 mx-72 my-12">
-                    <Link title={'Adobe'} href={'https://adobe.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={adobe} alt="Adobe Logo" className="h-auto w-2/3 hover:scale-125" />
+                    <Link title={'Adobe'} href={'https://webflow.com'} className="flex h-14 w-44 items-center justify-center">
+                        <Image src={webflow} alt="Adobe Logo" className="h-auto w-2/3 hover:scale-125" />
                     </Link>
                     <Link title={'Arc Browser'} href={'https://arc.net/'} className="flex h-14 w-44 items-center justify-center">
                         <Image src={arc} alt="Arc Browser Logo" className="h-auto w-2/3 hover:scale-125" />
