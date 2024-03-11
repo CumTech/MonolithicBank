@@ -15,6 +15,7 @@ import remote from "../../public/icons/remote.svg";
 import retool from "../../public/icons/retool.svg";
 import runway from "../../public/icons/runway.svg";
 import vercel from "../../public/icons/vercel.svg";
+import { ClosedSession } from "@/components/ClosedSession";
 
 export default function Home() {
     return (
