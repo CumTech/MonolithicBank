@@ -6,18 +6,18 @@ import { Button } from "@/components/ui/button";
 
 const validationSchema = Yup.object().shape({
     name: Yup.string()
-        .required('El nombre es requerido'),
+        .required('The name is required'),
     lastName: Yup.string()
-        .required('El apellido es requerido'),
+        .required('The last name is required'),
     email: Yup.string()
-        .email('El email no es válido')
-        .required('El email es requerido'),
+        .email('The email is not valid')
+        .required('The email is required'),
     password: Yup.string()
-        .min(6, 'La contraseña debe tener al menos 6 caracteres')
-        .required('La contraseña es requerida'),
+        .min(6, 'The password must be at least 6 characters long')
+        .required('The password is required'),
     curp: Yup.string()
-        .length(18, 'El CURP debe tener 18 caracteres')
-        .required('El CURP es requerido'),
+        .length(18, 'The CURP must be 18 characters long')
+        .required('The curp is required'),
 });
 
 export default function SignUpForm() {
@@ -41,33 +41,44 @@ export default function SignUpForm() {
                                 <Field
                                     name="name"
                                     type="text"
-                                    placeholder="Nombre"
+                                    placeholder="Name"
                                     className="w-full p-3 rounded-xl border border-secondary-300 bg-transparent" />
                                 <ErrorMessage name="name" component="div" className="text-danger-400/90" />
                             </div>
                             <div className="flex flex-col w-1/2 gap-2">
-                                <label>
-                                    <Field name="lastName" type="text" placeholder="Apellido"
-                                        className="w-full p-3 rounded-xl border border-secondary-300 bg-transparent" />
-                                </label>
+                                <Field
+                                    name="lastName"
+                                    type="text"
+                                    placeholder="Last Name"
+                                    className="w-full p-3 rounded-xl border border-secondary-300 bg-transparent" />
                                 <ErrorMessage name="lastName" component="div" className="text-danger-400/90" />
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-2">
-                            <Field name="email" type="email" placeholder="Email"
+                            <Field
+                                name="email"
+                                type="email"
+                                placeholder="Email"
                                 className="w-full p-3 rounded-xl border border-secondary-300 bg-transparent" />
                             <ErrorMessage name="email" component="div" className="text-danger-400/90" />
                         </div>
 
                         <div className="flex flex-col gap-2">
-                            <Field name="password" type="password" placeholder="Contraseña"
+                            <Field
+                                name="password"
+                                type="password"
+                                placeholder="Password"
                                 className="w-full p-3 rounded-xl border border-secondary-300 bg-transparent" />
                             <ErrorMessage name="password" component="div" className="text-danger-400/90" />
                         </div>
 
                         <div className="flex flex-col gap-2">
-                            <Field name="curp" type="text" placeholder="CURP" className="w-full p-3 rounded-xl border border-secondary-300 bg-transparent" />
+                            <Field
+                                name="curp"
+                                type="text"
+                                placeholder="CURP"
+                                className="w-full p-3 rounded-xl border border-secondary-300 bg-transparent" />
                             <ErrorMessage name="curp" component="div" className="text-danger-400/90" />
                         </div>
                         <div className="flex justify-center">
