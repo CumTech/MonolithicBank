@@ -28,7 +28,8 @@
     "react-dom": "^18",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
-    "validator": "^13.11.0"
+    "validator": "^13.11.0",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
