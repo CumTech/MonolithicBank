@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button"
 import Link from "next/link";
-import adobe from "../../public/icons/Adobe.svg";
-import arc from "../../public/icons/Arc.svg";
+import adobe from "../../public/icons/adobe.svg";
+import arc from "../../public/icons/arc.svg";
 import conver from "../../public/icons/conver.svg";
 import descript from "../../public/icons/descript.svg";
 import revolute from "../../public/icons/revolut.svg";
@@ -15,10 +15,12 @@ import remote from "../../public/icons/remote.svg";
 import retool from "../../public/icons/retool.svg";
 import runway from "../../public/icons/runway.svg";
 import vercel from "../../public/icons/vercel.svg";
+import NavBarHome from "@/components/NavBarHome";
 
 export default function Home() {
     return (
         <main className="min-h-screen">
+            <NavBarHome />
             <section className="flex flex-col h-max">
                 <h1 className="text-[192px] font-bold text-center">
                     NEW ERA OF
@@ -70,7 +72,7 @@ export default function Home() {
                     </h2>
                 </div>
                 <div className="basis-1/3 relative">
-                    <Image src="/images/card.svg" alt="Cards" layout="fill" objectFit="cover"/>
+                    <Image src="/images/card.svg" alt="Cards" width={600} height={600}/>
                     <div className="absolute top-[45vh] left-[35vh]">
                         <Button variant="card" size="lg" asChild>
                             <Link href="/login" className="flex gap-3">
