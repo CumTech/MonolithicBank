@@ -16,7 +16,6 @@ import retool from "../../public/icons/retool.svg";
 import runway from "../../public/icons/runway.svg";
 import vercel from "../../public/icons/vercel.svg";
 import NavBarHome from "@/components/NavBarHome";
-import { ClosedSession } from "@/components/ClosedSession";
 
 export default function Home() {
     return (
