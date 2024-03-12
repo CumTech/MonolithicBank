@@ -34,12 +34,18 @@ export default function LogInForm() {
                 {() => (
                     <Form className="flex flex-col gap-9 w-2/3">
                         <div className="flex flex-col w-3/5 gap-2">
-                            <Field name="email" type="email" placeholder="Email"
+                            <Field
+                                name="email"
+                                type="email"
+                                placeholder="Email"
                                 className="w-full p-3 rounded-xl border border-secondary-300 bg-transparent" />
                             <ErrorMessage name="email" component="div" className="text-danger-400/90" />
                         </div>
                         <div className="flex flex-col w-3/5 gap-2">
-                            <Field name="password" type="password" placeholder="Contraseña"
+                            <Field
+                                name="password"
+                                type="password"
+                                placeholder="Password"
                                 className="w-full p-3 rounded-xl border border-secondary-300 bg-transparent" />
                             <ErrorMessage name="password" component="div" className="text-danger-400/90" />
                         </div>
