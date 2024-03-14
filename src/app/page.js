@@ -1,5 +1,6 @@
 // noinspection JSValidateTypes
 
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button"
 import Link from "next/link";
@@ -16,7 +17,73 @@ import retool from "../../public/icons/retool.svg";
 import runway from "../../public/icons/runway.svg";
 import vercel from "../../public/icons/vercel.svg";
 import NavBarHome from "@/components/NavBarHome";
-import { ClosedSession } from "@/components/ClosedSession";
+import {CardHome} from "@/components/CardHome";
+
+const Companies = [
+    {
+        name: 'Webflow',
+        url: 'https://webflow.com',
+        logo: webflow,
+    },
+    {
+        name: 'Arc Browser',
+        url: 'https://arc.net/',
+        logo: arc,
+    },
+    {
+        name: 'ConverKit',
+        url: 'https://convertkit.com/',
+        logo: conver,
+        width: 'w-4/5',
+    },
+    {
+        name: 'Descript',
+        url: 'https://descript.com',
+        logo: descript,
+    },
+    {
+        name: 'Hex',
+        url: 'https://revolut.com',
+        logo: revolute,
+    },
+    {
+        name: 'Mercury',
+        url: 'https://mercury.com',
+        logo: mercury,
+        width: 'w-4/5',
+    },
+    {
+        name: 'Ramp',
+        url: 'https://ramp.com',
+        logo: ramp,
+    },
+    {
+        name: 'Raycast',
+        url: 'https://raycast.com',
+        logo: raycast,
+    },
+    {
+        name: 'Remote',
+        url: 'https://remote.com',
+        logo: remote,
+    },
+    {
+        name: 'Retool',
+        url: 'https://retool.com',
+        logo: retool,
+    },
+    {
+        name: 'Runway',
+        url: 'https://runway.com',
+        logo: runway,
+    },
+    {
+        name: 'Vercel',
+        url: 'https://vercel.com',
+        logo: vercel,
+
+    }
+]
 
 export default function Home() {
     return (
@@ -30,17 +97,7 @@ export default function Home() {
                     BANKING
                 </h1>
                 <div className="relative flex justify-center">
-                    <div
-                        className="w-[450px] h-[290px] z-10 left-40 -top-[5vh] relative rotate-[-76.81deg] bg-background-50 bg-opacity-10 rounded-[40px] shadow-lg shadow-background-950 border-l-4 border-b-4 border-background-50 border-opacity-30 backdrop-blur-[5px]">
-                        <span
-                            className="w-[328.03px] h-[68.89px] left-[59.27px] top-[201.67px] absolute text-slate-100 text-2xl font-medium">Luis
-                            Alferez
-                        </span>
-                        <span
-                            className="w-[279.89px] h-[68.89px] left-[57.48px] top-[141.55px] absolute text-slate-100 text-2xl font-medium">****
-                            **** **** ****
-                        </span>
-                    </div>
+                    <CardHome name="Luis Alferez" />
                     <div
                         className="w-[450px] h-[290px] top-[15vh] -left-40 relative rotate-[-76.81deg] bg-background-50 bg-opacity-10 rounded-[40px] shadow-lg shadow-background-950 border-l-4 border-b-4 border-background-50 border-opacity-30">
                         <span
@@ -121,42 +178,11 @@ export default function Home() {
                     From next-generation startups to fully established companies.
                 </h3>
                 <div className="grid grid-cols-6 gap-10 mx-72 my-12">
-                    <Link title={'Adobe'} href={'https://webflow.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={webflow} alt="Adobe Logo" className="h-auto w-2/3 hover:scale-125" />
-                    </Link>
-                    <Link title={'Arc Browser'} href={'https://arc.net/'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={arc} alt="Arc Browser Logo" className="h-auto w-2/3 hover:scale-125" />
-                    </Link>
-                    <Link title={'ConverKit'} href={'https://convertkit.com/'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={conver} alt="ConverKit Logo" className="h-auto w-4/5 hover:scale-125" />
-                    </Link>
-                    <Link title={'Descript'} href={'https://descript.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={descript} alt="Descript Logo" className="h-auto w-2/3 hover:scale-125" />
-                    </Link>
-                    <Link title={'Hex'} href={'https://revolut.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={revolute} alt="Revolute  Logo" className="h-2/3 w-2/3 hover:scale-125" />
-                    </Link>
-                    <Link title={'Mercury'} href={'https://mercury.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={mercury} alt="Mercury Logo" className="h-auto w-4/5 hover:scale-125" />
-                    </Link>
-                    <Link title={'Ramp'} href={'https://ramp.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={ramp} alt="Ramp  Logo" className="h-auto w-2/3 hover:scale-125" />
-                    </Link>
-                    <Link title={'Raycast'} href={'https://raycast.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={raycast} alt="Raycast Logo" className="h-auto w-2/3 hover:scale-125" />
-                    </Link>
-                    <Link title={'Remote'} href={'https://remote.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={remote} alt="Remote Logo" className="h-auto w-2/3 hover:scale-125" />
-                    </Link>
-                    <Link title={'Retool'} href={'https://retool.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={retool} alt="Retool Logo" className="h-auto w-2/3 hover:scale-125" />
-                    </Link>
-                    <Link title={'Runway'} href={'https://runway.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={runway} alt="Runway Logo" className="h-auto w-2/3 hover:scale-125" />
-                    </Link>
-                    <Link title={'Vercel'} href={'https://vercel.com'} className="flex h-14 w-44 items-center justify-center">
-                        <Image src={vercel} alt="Vercel Logo" className="h-auto w-2/3 hover:scale-125" />
-                    </Link>
+                    {Companies.map((company, index) => (
+                        <Link key={index} title={company.name} href={company.url} className="flex h-14 w-44 items-center justify-center">
+                            <Image src={company?.logo} alt={`${company.name} Logo`} className={`h-auto ${company.width ? company.width : 'w-2/3' } hover:scale-125`} />
+                        </Link>
+                    ))}
                 </div>
             </section>
         </main>
