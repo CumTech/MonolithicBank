@@ -16,11 +16,13 @@ import retool from "../../public/icons/retool.svg";
 import runway from "../../public/icons/runway.svg";
 import vercel from "../../public/icons/vercel.svg";
 import NavBarHome from "@/components/NavBarHome";
+import AddCard from "@/components/Add-Card";
 
 export default function Home() {
     return (
         <main className="min-h-screen">
             <NavBarHome />
+            <AddCard />
             <section className="flex flex-col h-max">
                 <h1 className="text-[192px] font-bold text-center">
                     NEW ERA OF
