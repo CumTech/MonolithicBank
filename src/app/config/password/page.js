@@ -1,5 +1,6 @@
 import SidebarConfig, { SidebarItemConfig } from "@/components/SideBarConfig";
 import Image from "next/image"
+import PasswordForm from "@/components/forms/PasswordForm";
 
 export default function Password() {
     return (
@@ -14,7 +15,9 @@ export default function Password() {
             </div>
             <div className="flex grow my-10 mr-10">
                 <div className="flex items-center justify-center  w-full h-full rounded-[30px] bg-background-50/10">
-                    <h1 className="text-2xl font-semibold">Config</h1>
+                    <h1 className="text-2xl font-semibold">
+                        <PasswordForm />
+                    </h1>
                 </div>
             </div>
         </div>
