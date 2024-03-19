@@ -3,16 +3,24 @@ import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
+const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/;
+// min 5 characters, 1 upper case letter, 1 lower case letter, 1 numeric digit.
 
 const validationSchema = Yup.object().shape({
-  Password: Yup.string().required("The Password is required"),
-  NewPassword: Yup.string().required("The New Password is required")
-    .min(8, "The new password must be at least 8 characters long")
-    .required("The new password is required"),
+  Password: Yup.string()
+    .matches(passwordRules, { message: "Make sure characters are correct " })
+    .required("Required"),
+  NewPassword: Yup.string()
+    .matches(passwordRules, {
+      message:
+        "Make sure characters are correct",
+    })
+    .required("Required"),
   ConfirmPassword: Yup.string()
-    .min(8, "The confirm password must be at least 8 characters long")
-    .required("The confirm password is required"),
+    .oneOf([Yup.ref("NewPassword"), null], "Passwords must match")
+    .required("Required"),
 });
 
 export default function PasswordForm() {
@@ -24,7 +32,7 @@ export default function PasswordForm() {
         </h2>
       </div>
       <Formik
-        initialValues={{ Password: "", NewPassword: "", ConfirmPassword: ""}}
+        initialValues={{ Password: "", NewPassword: "", ConfirmPassword: "" }}
         validationSchema={validationSchema}
         onSubmit={(values) => {
           console.log(values);
@@ -54,6 +62,19 @@ export default function PasswordForm() {
                     Forgot Password
                   </Button>
                 </div>
+              </div>
+              <div>
+              <label className="text-sm text-text">
+                  <ul className="list-inside list-none">
+                    <li>Your password must have:</li>
+                  </ul>
+                  <ul className="list-inside list-disc">
+                    <li>8 characters</li>
+                    <li>1 upper case letter</li>
+                    <li>1 lower case letter</li>
+                    <li>1 numeric digit</li>
+                  </ul>
+                </label>
               </div>
             </div>
 
@@ -87,10 +108,11 @@ export default function PasswordForm() {
                 />
               </div>
             </div>
+            <Separator/>
             <div className="flex flex-row gap-4">
               <div className="flex flex-col w-1/2 gap-2">
                 <Button
-                  className="text-text bg-trasparent border h-16 focus:text-black focus:bg-white hover:text-black hover:bg-white"
+                  className="text-secondary-default bg-primary-default border h-16 hover:opacity-80"
                   type="submit"
                 >
                   Save Changes
@@ -98,8 +120,8 @@ export default function PasswordForm() {
               </div>
               <div className="flex flex-col w-1/2 gap-2 ">
                 <Button
-                  className="text-text bg-trasparent border h-16 focus:text-black focus:bg-white hover:text-black hover:bg-white"
-                  type="submit"
+                  variant="outline"
+                  className="border-secondary-300 h-16"
                 >
                   Discard Changes
                 </Button>

@@ -3,6 +3,7 @@ import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required("The name is required"),
@@ -12,6 +13,7 @@ const validationSchema = Yup.object().shape({
     .required("The email is required"),
   phone: Yup.string()
     .min(10, "The phone number must be at least 10 characters long")
+    .max(10, "The phone number can't exceed 20 characters")
     .required("The phone number is required"),
 });
 
@@ -19,7 +21,7 @@ export default function UserInfoForm() {
   return (
     <div className="w-full flex flex-col gap-16">
       <div>
-        <h2 className="text-[40px] font-bold leading-[48px] break-words text-white">
+        <h2 className="text-[40px] font-bold leading-[48px] break-words text-white ">
           Basic Information
         </h2>
       </div>
@@ -34,7 +36,7 @@ export default function UserInfoForm() {
           <Form className="flex flex-col gap-16">
             <div className="flex flex-row gap-16">
               <div className="flex flex-col w-1/2 gap-2">
-                <label className="text-[16] text-text ">First Name</label>
+                <label className="w-[376px] text-zinc-400 text-base font-medium font-['Kode Mono'] leading-normal tracking-tight">First Name</label>
                 <Field
                   name="name"
                   type="text"
@@ -48,7 +50,7 @@ export default function UserInfoForm() {
                 />
               </div>
               <div className="flex flex-col w-1/2 gap-2">
-                <label className="text-[16] text-text ">Last Name</label>
+                <label className="w-[133px] h-5 text-white text-base font-medium font-['Kode Mono'] leading-normal tracking-tight">Last Name</label>
                 <Field
                   name="lastName"
                   type="text"
@@ -65,11 +67,11 @@ export default function UserInfoForm() {
 
             <div className="flex flex-row gap-16 justify-items-end justify-self-end">
               <div className="flex flex-col w-1/2 gap-2">
-                <label className="text-[16] text-text ">E-mail</label>
+                <label className="w-[133px] h-5 text-white text-base font-medium font-['Kode Mono'] leading-normal tracking-tight ">E-mail</label>
                 <Field
                   name="email"
                   type="email"
-                  placeholder="Email"
+                  placeholder="hello@email.com"
                   className="w-full p-3 rounded-xl border border-secondary-300 bg-transparent"
                 />
                 <ErrorMessage
@@ -79,7 +81,7 @@ export default function UserInfoForm() {
                 />
               </div>
               <div className="flex flex-col w-1/2 gap-2">
-                <label className="text-[16] text-text ">Phone Number</label>
+                <label className="w-[133px] h-5 text-white text-base font-medium font-['Kode Mono'] leading-normal tracking-tight">Phone Number</label>
                 <Field
                   name="phone"
                   type="phone"
@@ -87,7 +89,7 @@ export default function UserInfoForm() {
                   className="w-full p-3 rounded-xl border border-secondary-300 bg-transparent"
                 />
                 <ErrorMessage
-                  name="lastName"
+                  name="phone"
                   component="div"
                   className="text-danger-400/90"
                 />
@@ -101,10 +103,13 @@ export default function UserInfoForm() {
                 </div>
               </div>
             </div>
+            
+            <Separator/>
+
             <div className="flex flex-row gap-4">
               <div className="flex flex-col w-1/2 gap-2">
                 <Button
-                  className="text-text bg-trasparent border h-16 focus:text-black focus:bg-white hover:text-black hover:bg-white"
+                  className="text-secondary-default bg-primary-default border h-16 hover:opacity-80"
                   type="submit"
                 >
                   Save Changes
@@ -112,8 +117,8 @@ export default function UserInfoForm() {
               </div>
               <div className="flex flex-col w-1/2 gap-2 ">
                 <Button
-                  className="text-text bg-trasparent border h-16 focus:text-black focus:bg-white hover:text-black hover:bg-white"
-                  type="submit"
+                  variant="outline"
+                  className="border-secondary-300 h-16"
                 >
                   Discard Changes
                 </Button>

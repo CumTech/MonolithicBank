@@ -3,6 +3,7 @@ import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 const validationSchema = Yup.object().shape({
   street: Yup.string().required("The street is required"),
@@ -16,7 +17,7 @@ const validationSchema = Yup.object().shape({
 
 export default function AddressInformationForm() {
   return (
-    <div className="w-full flex flex-col gap-16">
+    <div className="w-full flex flex-col gap-8">
       <div>
         <h2 className="text-[40px] font-bold leading-[48px] break-words text-white">
           Address Information
@@ -106,10 +107,12 @@ export default function AddressInformationForm() {
                 />
               </div>
             </div>
+            <Separator/>
+
             <div className="flex flex-row gap-4">
               <div className="flex flex-col w-1/2 gap-2">
                 <Button
-                  className="text-text bg-trasparent border h-16 focus:text-black focus:bg-white hover:text-black hover:bg-white"
+                  className="text-secondary-default bg-primary-default border h-16 hover:opacity-80"
                   type="submit"
                 >
                   Save Changes
@@ -117,8 +120,8 @@ export default function AddressInformationForm() {
               </div>
               <div className="flex flex-col w-1/2 gap-2 ">
                 <Button
-                  className="text-text bg-trasparent border h-16 focus:text-black focus:bg-white hover:text-black hover:bg-white"
-                  type="submit"
+                  variant="outline"
+                  className="border-secondary-300 h-16"
                 >
                   Discard Changes
                 </Button>
