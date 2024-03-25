@@ -95,7 +95,7 @@ export default function UserInfoForm() {
                 />
                 <div className="flex flex-col w-1/3 gap-2 inset-y-0 right-0">
                   <Button
-                    className="text-base w-full p-0 rounded-2xl border-secondary-300 text-text bg-trasparent border focus:text-black focus:bg-white hover:text-black hover:bg-white"
+                    className="text-text-950 text-lg bg-background-50 shadow-lg shadow-background-700"
                     type="submit"
                   >
                     Validate
